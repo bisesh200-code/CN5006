@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const MONGO_URI ='mongodb+srv//bisesh200_db_user:Bisesh.1235@cluster0.kx7nczj.mongodb.net/'
+const MONGO_URI = 'mongodb+srv://bisesh200_db_user:Bisesh.1235@cluster0.kx7nczj.mongodb.net/'
 const PersonSchema = new mongoose.Schema({
 
     name: {
@@ -16,12 +16,14 @@ PersonSchema,
 'personCollection'
 );
 
+async function insertOne() {
 const doc1 = new Person({
 name: 'NHQ',
 age: 32,
 gender: 'Male',
 salary: 1234
 });
+
 const savedDoc = await doc1.save();
 console.log('One document inserted');
 console.log(savedDoc);
